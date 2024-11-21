@@ -1,7 +1,7 @@
 
 # Imports ----------------------------------------------------------------------
-from typing import List, Tuple, Self, Union
-from datetime import datetime, time, timedelta
+from typing import List, Tuple, Union
+from datetime import datetime, time
 from src.CSV import CSV
 
 
@@ -103,7 +103,7 @@ class Activity():
         return self.active_status == "active"
     
     @classmethod
-    def parse_activity(cls, entry: dict, video: str="") -> Self:
+    def parse_activity(cls, entry: dict, video: str="") -> "Activity":
         return Activity(
             parse_datetime(entry["start"], entry["dayshift_start"]),
             parse_datetime(entry["end"], entry["dayshift_end"]),
@@ -111,7 +111,7 @@ class Activity():
         )
     
     @classmethod
-    def parse_activies(cls, dataset: CSV, video: str="") -> List[Self]:
+    def parse_activies(cls, dataset: CSV, video: str="") -> List["Activity"]:
         return [cls.parse_activity(entry, video) for entry in dataset]
 
     def __str__(self) -> str:
@@ -179,7 +179,7 @@ class Predator(Activity):
         self.attacks = attacks
 
     @classmethod
-    def parse_predator(cls, entry: dict, video: str="") -> Self:
+    def parse_predator(cls, entry: dict, video: str="") -> "Predator":
 
         # Parse attacks
         attacks = []
@@ -205,7 +205,7 @@ class Predator(Activity):
         )
     
     @classmethod
-    def parse_predators(cls, dataset: CSV, video: str="") -> List[Self]:
+    def parse_predators(cls, dataset: CSV, video: str="") -> List["Predator"]:
         return [cls.parse_predator(entry, video) for entry in dataset]
     
     def __str__(self) -> str:

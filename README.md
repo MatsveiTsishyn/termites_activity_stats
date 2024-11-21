@@ -5,25 +5,17 @@
 
 Here are the supplementary data and the code for the statistical analysis of the publication [1] (2024) <LINK>.
 
-**Authors**: AUTHORS
+**Authors**: Johanne Timmermans, Matsvei Tsishyn, Nicolas Fontaine, Yves Roisin
 
 ## Installation and Usage
 
-- Install `python` version `3.11` or later.
-- Install python packages `numpy`, `matplotlib` and `seaborn` with `pip`:
+- Install `python` version `3.9` or later.
+- Install python packages `numpy`, `matplotlib` and `seaborn` with `pip` (or `pip3` depending on your system):
 
 ```console
 pip install numpy
 pip install matplotlib
-pip install pip
-```
-
-or (depending on you Operating System):
-
-```console
-pip3 install numpy
-pip3 install matplotlib
-pip3 install pip
+pip install seaborn
 ```
 
 - From the root directory of this project, execute python scripts `generate_plot.py` and `generate_stats.py` with:
@@ -41,6 +33,10 @@ python3 generate_stats.py
 - Files `generate_plot.py` and `generate_stats.py`: are the main scripts to generate all figures and statistics.
 - Folder `./src/`: contains some python functions and classes thar are dependencies of the main scripts.
 - Separator of all `.csv` files is `;`.
+
+## Bootstrap method description
+
+XXX.
 
 ## References
 
