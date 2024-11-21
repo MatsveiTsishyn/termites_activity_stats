@@ -10,12 +10,11 @@ Here are the supplementary data and the code for the statistical analysis of the
 ## Installation and Usage
 
 - Install `python` version `3.9` or later.
-- Install python packages `numpy`, `matplotlib` and `seaborn` with `pip` (or `pip3` depending on your system):
+- Install python packages `numpy` and `matplotlib` with `pip` (or `pip3` depending on your system):
 
 ```console
 pip install numpy
 pip install matplotlib
-pip install seaborn
 ```
 
 - From the root directory of this project, execute python scripts `generate_plot.py` and `generate_stats.py` with:

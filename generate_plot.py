@@ -2,7 +2,7 @@
 # Imports ----------------------------------------------------------------------
 import os
 from datetime import datetime, time, timedelta
-import seaborn as sns
+#import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 from src.CSV import CSV
@@ -57,7 +57,7 @@ SPACE_BOTTOM = 650
 SPACE_TIME = 5000
 
 # Plot other parameters
-DARKGRID = False                          # Use seaborn darkgrid mode
+#DARKGRID = False                          # Use seaborn darkgrid mode
 X_TICKS, Y_TICKS = False, False           # Use ticks marks on the plot
 HOURS_LINE_WIDTH = 0.6                    # Line width of the horizontal hour line
 HOURS_LINE_N_TICKS = 12                   # Number of the hoursline ticks
@@ -161,15 +161,15 @@ for NAME in NAMES_LIST:
     # Init plot
     first_start, last_end = activities_list[0].start, activities_list[-1].end
     last_y = get_coords(last_end)[1] + 1
-    if DARKGRID:
-        sns.set_style("darkgrid")
+    #if DARKGRID:
+    #    sns.set_style("darkgrid")
     fig, ax = plt.subplots()
-    if not DARKGRID:
-        # Hiding the spines
-        ax.spines['top'].set_visible(False)
-        ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_visible(False)
-        ax.spines['bottom'].set_visible(False)
+    #if not DARKGRID:
+    # Hiding the spines
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
     #plt.title(f"Timeline: {NAME}")
     x0, x1 = 0, SECONDS_BY_LINE
     dx = x1 - x0
