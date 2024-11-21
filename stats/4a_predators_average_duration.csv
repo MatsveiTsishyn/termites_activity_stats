@@ -1,0 +1,12 @@
+nest;cam;Opiliones_n_presences;Opiliones_average_duration_minutes;Opiliones_median_duration_minutes;Reduviidae_n_presences;Reduviidae_average_duration_minutes;Reduviidae_median_duration_minutes
+All;All;148;5.3311;3.0000;17;20.7059;3.0000
+All;cam_inf;81;4.1605;2.0000;17;20.7059;3.0000
+All;cam_sup;67;6.7463;4.0000;0;nan;nan
+1;All;9;3.6667;4.0000;0;nan;nan
+1;cam_inf;4;2.7500;2.5000;0;nan;nan
+1;cam_sup;5;4.4000;4.0000;0;nan;nan
+2;All;93;5.8172;3.0000;0;nan;nan
+2;cam_inf;31;3.5806;1.0000;0;nan;nan
+2;cam_sup;62;6.9355;4.0000;0;nan;nan
+3;All;46;4.6739;2.0000;17;20.7059;3.0000
+3;cam_inf;46;4.6739;2.0000;17;20.7059;3.0000
