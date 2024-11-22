@@ -22,10 +22,6 @@ EXTENTIONS = ["png"]                                   # List of extentions to w
 DPI = 300                                              # Dots per inch in saved figures
 
 # Data parameters
-RENAME_COLUMN_MAP = {                                  # Just a mapping for .csv column names for clarity
-    "debut": "start",
-    "ending": "end",
-}
 POSSIBLE_CAMERAS = ["cam_inf", "cam_sup"]              # List of possible cameras
 
 # Color parameters
@@ -85,8 +81,6 @@ for NAME in NAMES_LIST:
     # Read activity data
     ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_Activity.csv")
     activities_data = CSV().read(ACTIVITY_PATH)
-    for old_name, new_name in RENAME_COLUMN_MAP.items():
-        activities_data.rename_col(old_name, new_name)
     add_dayshifts(activities_data)
     activities_data.show(n_entries=25)
 
@@ -123,8 +117,6 @@ for NAME in NAMES_LIST:
     # Read predators data
     PREDATORS_PATH = os.path.join(DATA_DIR, f"{NAME}_Predator.csv")
     predators_data = CSV().read(PREDATORS_PATH)
-    for old_name, new_name in RENAME_COLUMN_MAP.items():
-        predators_data.rename_col(old_name, new_name)
     add_dayshifts(predators_data)
     predators_data.show(n_entries=25)
 

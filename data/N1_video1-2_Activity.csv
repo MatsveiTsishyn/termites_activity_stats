@@ -1,4 +1,4 @@
-jours;debut;ending;activity;cam
+day;start;end;activity;cam
 1/2;12:10:00;03:38:00;transport;cam_inf
 2;03:38:00;05:14:00;resting;cam_inf
 2;05:14:00;06:42:00;construction;cam_inf

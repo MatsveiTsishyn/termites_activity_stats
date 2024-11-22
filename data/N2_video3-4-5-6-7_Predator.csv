@@ -1,4 +1,4 @@
-jours;debut;ending;predator;attack1;cam
+day;start;end;predator;attack1;cam
 1;23:31:00;23:32:00;Opiliones;;cam_inf
 2;01:11:00;01:17:00;Opiliones;01:17:00;cam_inf
 2;01:51:00;01:55:00;Opiliones;;cam_inf

@@ -17,10 +17,6 @@ DATA_DIR = "./data/"                                   # Directory of .csv data 
 STATS_DIR = "./stats/"                                 # Directory of stats (output)
 
 # Data parameters
-RENAME_COLUMN_MAP = {                                  # Just a mapping for .csv column names for clarity
-    "debut": "start",
-    "ending": "end",
-}
 NESTS = ["1", "2", "3"]
 CAMERAS = ["cam_inf", "cam_sup"]
 ACTIVITIES_SPLITTES = ["resting", "column", "foraging", "transport", "construction", "transport+construction"]
@@ -34,8 +30,6 @@ def read_activities(do_print: bool=False) -> List[Activity]:
     for NAME in NAMES_LIST:
         ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_Activity.csv")
         activities_data = CSV().read(ACTIVITY_PATH)
-        for old_name, new_name in RENAME_COLUMN_MAP.items():
-            activities_data.rename_col(old_name, new_name)
         add_dayshifts(activities_data)
         for activity in Activity.parse_activies(activities_data, NAME):
             if do_print: print(activity)
@@ -47,8 +41,6 @@ def read_predators(do_print: bool=False) -> List[Predator]:
     for NAME in NAMES_LIST:
         PREDATORS_PATH = os.path.join(DATA_DIR, f"{NAME}_Predator.csv")
         predators_data = CSV().read(PREDATORS_PATH)
-        for old_name, new_name in RENAME_COLUMN_MAP.items():
-            predators_data.rename_col(old_name, new_name)
         add_dayshifts(predators_data)
         for predator in Predator.parse_predators(predators_data, NAME):
             if do_print: print(predator)
@@ -62,8 +54,6 @@ def read_complete_activities() -> List[Activity]:
         ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_Activity.csv")
         activities_data = CSV().read(ACTIVITY_PATH)
         activities_video = []
-        for old_name, new_name in RENAME_COLUMN_MAP.items():
-            activities_data.rename_col(old_name, new_name)
         add_dayshifts(activities_data)
         for activity in Activity.parse_activies(activities_data, NAME):
             activities_video.append(activity)

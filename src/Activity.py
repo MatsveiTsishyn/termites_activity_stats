@@ -36,7 +36,7 @@ def add_dayshifts(csv: CSV) -> None:
     # Loop on entries
     for entry in csv:
 
-        day = entry["jours"]
+        day = entry["day"]
         if len(day.split("/")) == 1:
             dayshift = int(day) - 1
             entry["dayshift_start"] = dayshift
