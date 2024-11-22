@@ -12,7 +12,7 @@ from src.bootstrap_standard_error import bootstrap_standard_error
 # Constants --------------------------------------------------------------------
 
 # Names and paths
-NAMES_LIST = ["N1A", "N2A", "N3A", "N3B"]              # File names to run on
+NAMES_LIST = ["N1_video1-2", "N2_video3-4-5-6-7", "N3_video8", "N3_video9"]              # File names to run on
 DATA_DIR = "./data/"                                   # Directory of .csv data files (input)
 STATS_DIR = "./stats/"                                 # Directory of stats (output)
 
@@ -32,7 +32,7 @@ PREDATORS = ["Opiliones", "Reduviidae"]
 def read_activities(do_print: bool=False) -> List[Activity]:
     activities_list = []
     for NAME in NAMES_LIST:
-        ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_C.csv")
+        ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_Activity.csv")
         activities_data = CSV().read(ACTIVITY_PATH)
         for old_name, new_name in RENAME_COLUMN_MAP.items():
             activities_data.rename_col(old_name, new_name)
@@ -45,7 +45,7 @@ def read_activities(do_print: bool=False) -> List[Activity]:
 def read_predators(do_print: bool=False) -> List[Predator]:
     predators_list = []
     for NAME in NAMES_LIST:
-        PREDATORS_PATH = os.path.join(DATA_DIR, f"{NAME}_P.csv")
+        PREDATORS_PATH = os.path.join(DATA_DIR, f"{NAME}_Predator.csv")
         predators_data = CSV().read(PREDATORS_PATH)
         for old_name, new_name in RENAME_COLUMN_MAP.items():
             predators_data.rename_col(old_name, new_name)
@@ -59,7 +59,7 @@ def read_complete_activities() -> List[Activity]:
     IMCOMPLETE_ACTIVITY_DURATION_THR = 5
     complete_activities = []
     for NAME in NAMES_LIST:
-        ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_C.csv")
+        ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_Activity.csv")
         activities_data = CSV().read(ACTIVITY_PATH)
         activities_video = []
         for old_name, new_name in RENAME_COLUMN_MAP.items():

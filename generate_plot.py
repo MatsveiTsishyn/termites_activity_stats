@@ -14,7 +14,7 @@ from src.Activity import add_dayshifts, get_coords, get_seconds, Activity, Preda
 
 # Names and paths
 NAMES_LIST = [                                         # File names to run on
-    "N1A", "N2A", "N3A", "N3B",
+    "N1_video1-2", "N2_video3-4-5-6-7", "N3_video8", "N3_video9",
 ]
 DATA_DIR = "./data/"                                   # Directory of .csv data files (input)
 FIG_DIR = "./fig/"                                     # Directory of figures (output)
@@ -83,7 +83,7 @@ for NAME in NAMES_LIST:
     CAM_LINE_HEIGHT =  SPACE_TOP + ATTACK_BAR_HEIGHT + PREDATOR_BAR_HEIGHT + SPACE_PREDATORS + ATTACK_BAR_HEIGHT + PREDATOR_BAR_HEIGHT + SPACE_PREDATOR_ACTIVITY + ACTIVITY_BAR_HEIGHT + HOURS_BAR_HEIGHT + SPACE_BOTTOM
 
     # Read activity data
-    ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_C.csv")
+    ACTIVITY_PATH = os.path.join(DATA_DIR, f"{NAME}_Activity.csv")
     activities_data = CSV().read(ACTIVITY_PATH)
     for old_name, new_name in RENAME_COLUMN_MAP.items():
         activities_data.rename_col(old_name, new_name)
@@ -121,7 +121,7 @@ for NAME in NAMES_LIST:
             previous_activity_start = activity.start
 
     # Read predators data
-    PREDATORS_PATH = os.path.join(DATA_DIR, f"{NAME}_P.csv")
+    PREDATORS_PATH = os.path.join(DATA_DIR, f"{NAME}_Predator.csv")
     predators_data = CSV().read(PREDATORS_PATH)
     for old_name, new_name in RENAME_COLUMN_MAP.items():
         predators_data.rename_col(old_name, new_name)
