@@ -35,7 +35,11 @@ python3 generate_stats.py
 
 ## Bootstrap method description
 
-XXX.
+To estimate standard errors and confidence intervals for the mean or median durations by activity type, we employed a bootstrap approach, as detailed below.
+  - For a given activity type, let `D` represent the set of recorded activity durations, and let `n` denote the number of durations in `D`.
+  - We generated `50,000` resampled lists `Di`​ (for `i=1,…,50,000`) by randomly selecting `n` durations from `D` with replacement.
+  - The standard error for the mean or median was estimated as the standard deviation of the means or medians across the `50,000` resampled lists `Di`​.
+  - The `95%` confidence interval was calculated as the range from the 2.5th to the 97.5th percentiles of the means or medians across the resampled lists.
 
 ## References
 
