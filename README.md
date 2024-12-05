@@ -1,5 +1,6 @@
 
-# Supplementary Data and Analysis: TITLE
+# Supplementary Data and Analysis:
+# One nest, two niches? Distribution of alimentary resources between an inquiline termite and its host.
 
 ## Description
 
@@ -43,4 +44,4 @@ To estimate standard errors and confidence intervals for the mean or median dura
 
 ## References
 
-  [1] REFERENCE
+  [1] One nest, two niches? Distribution of alimentary resources between an inquiline termite and its host. Johanne Timmermans, Matsvei Tsishyn, Nicolas Fontaine and Yves Roisin.
